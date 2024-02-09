@@ -1,9 +1,6 @@
-import {transakAPIKey} from "./constants.js";
+const {transakAPIKey} = require(__dirname + "/../constants.js");
 
-export default async function getSupportedCurrencies(provider) {
-
-	console.log("got to getSupportedCurrencies function");
-
+module.exports = async function getSupportedCurrencies(provider) {
 	switch(provider) {
 		case "luno":
 			//dont matter if its for onRamp or for offRamp, it supports same currencies
@@ -16,12 +13,13 @@ export default async function getSupportedCurrencies(provider) {
 				headers: {"accept": "application/json"}
 			};
 			const result = await fetch(new Request(url, options));
-			const currencies = (await result.json()).map(kini => kini.symbol);
+			const currenciesObj = (await result.json())
+			const currencies = currenciesObj["response"].map(kini => kini.symbol);
 			
 			return currencies;
 			break;
 		default:
 			break;
 	}
-	
+
 }
