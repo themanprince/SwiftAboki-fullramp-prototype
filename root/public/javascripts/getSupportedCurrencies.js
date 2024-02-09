@@ -1,6 +1,6 @@
-const {transakAPIKey} = require(__dirname + "/../constants.js");
+import {transakAPIKey} from "./constants.js";
 
-module.exports = async function getSupportedCurrencies(provider) {
+export default async function getSupportedCurrencies(provider) {
 	switch(provider) {
 		case "luno":
 			//dont matter if its for onRamp or for offRamp, it supports same currencies
