@@ -34,6 +34,7 @@ btn.addEventListener("click", function onRamp() {
 	  }
 	};
 
+	console.log("config object is", infoToPass);
 	
 	handleRamping(sendCurr, initiateWidget(infoToPass));
 });
