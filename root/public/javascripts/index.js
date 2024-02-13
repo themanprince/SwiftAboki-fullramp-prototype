@@ -18,8 +18,21 @@ btn.addEventListener("click", function onRamp() {
 	  fiatCurrency: sendCurr,
 	  network: "ethereum",
 	  cryptoCurrencyCode: "USDT",
-	  isFeeCalculationHidden: true
-};
+	  isFeeCalculationHidden: true,
+	  userData: {
+		  firstName: 'Doe',
+		  lastName: 'Jane',
+		  mobileNumber: '+337911123456',
+		  dob: '1998-01-01',
+		  address: {
+		    addressLine1: '170 Rue du Faubourg Saint-Denis, Paris',
+		    city: 'Paris',
+		    state: 'Paris',
+		    postCode: '75010',
+			countryCode: "FR"
+		  }
+	  }
+	};
 
 	
 	handleRamping(sendCurr, initiateWidget(infoToPass));
